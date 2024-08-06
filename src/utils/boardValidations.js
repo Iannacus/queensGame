@@ -1,0 +1,105 @@
+import {
+  makeCellInvalid,
+  makeColInvalid,
+  makeColorInvalid,
+  makeRowInvalid,
+} from "./invalidRows";
+import { verifyRow, verifyCol, verifyColor } from "./queenCounters";
+
+export function validateNewQueen(board, col, row) {
+  validateCorners(board, col, row);
+  isSameRow(board, col, row);
+  isSameCol(board, col, row);
+  isSameColor(board, col, row);
+}
+
+export function isSameRow(board, col, row) {
+  let queens = verifyRow(board, row, col);
+
+  if (queens >= 2) makeRowInvalid(board, row);
+
+  board[row].forEach((item) => {
+    if (item.state === "queen" && queens > 1) {
+      board[row][item.col].isWrong = true;
+    }
+  });
+}
+
+export function isSameCol(board, col, row) {
+  let queens = verifyCol(board, row, col);
+
+  if (queens >= 2) {
+    makeColInvalid(board, col);
+  }
+
+  board.forEach((item) => {
+    if (item[col].state === "queen" && queens > 1) {
+      item[col].isWrong = true;
+    }
+  });
+}
+
+export function isSameColor(board, col, row) {
+  const color = board[row][col].color;
+  const queens = verifyColor(board, col, row, color);
+
+  if (queens >= 2) makeColorInvalid(board, color);
+
+  board.forEach((item) => {
+    item.forEach((cell) => {
+      if (cell.color === color && cell.state === "queen" && queens > 1) {
+        cell.isWrong = true;
+        board[row][col].isWrong = true;
+      }
+    });
+  });
+}
+
+export function validateCorners(board, col, row) {
+  const len = board.length - 1;
+
+  if (isUL(board, row, col)) {
+    board[row][col].isWrong = true;
+    board[row - 1][col - 1].isWrong = true;
+    makeCellInvalid(board, col, row);
+    makeCellInvalid(board, col - 1, row - 1);
+  }
+  if (isUR(board, row, col, len)) {
+    board[row][col].isWrong = true;
+    board[row - 1][col + 1].isWrong = true;
+    makeCellInvalid(board, col, row);
+    makeCellInvalid(board, col + 1, row - 1);
+  }
+  if (isDL(board, row, col, len)) {
+    board[row][col].isWrong = true;
+    board[row + 1][col - 1].isWrong = true;
+    makeCellInvalid(board, col, row);
+    makeCellInvalid(board, col - 1, row + 1);
+  }
+  if (isDR(board, row, col, len)) {
+    board[row][col].isWrong = true;
+    board[row + 1][col + 1].isWrong = true;
+    makeCellInvalid(board, col, row);
+    makeCellInvalid(board, col + 1, row + 1);
+  }
+}
+
+export const isUL = (board, row, col) => {
+  if (row === 0 || col === 0) return false;
+  return board[row - 1][col - 1].state === "queen";
+};
+
+export const isUR = (board, row, col, len) => {
+  if (row === 0 || col === len) return false;
+  return board[row - 1][col + 1].state === "queen";
+};
+
+export const isDL = (board, row, col, len) => {
+  if (row === len || col === 0) return false;
+  return board[row + 1][col - 1].state === "queen";
+};
+
+export const isDR = (board, row, col, len) => {
+  if (row === len || col === len) return false;
+  return board[row + 1][col + 1].state === "queen";
+};

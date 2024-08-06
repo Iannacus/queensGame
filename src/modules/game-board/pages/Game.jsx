@@ -1,14 +1,14 @@
-import React from 'react'
-import GameBoard from '../components/GameBoard'
+import React from "react";
+import GameBoard from "../components/GameBoard";
 
-import { boards } from '../../../boards/hard'
+import { boards } from "../../../boards/hard";
 
 function Game() {
   return (
     <div className="m-auto max-w-[500px] min-w-[350px] px-[10px]">
-      <GameBoard board={boards[1]} />
+      <GameBoard board={boards[2]} />
     </div>
-  )
+  );
 }
 
-export default Game
+export default Game;

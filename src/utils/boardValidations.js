@@ -1,10 +1,11 @@
+import { colors } from "./colorClasses";
 import {
   makeCellInvalid,
   makeColInvalid,
   makeColorInvalid,
   makeRowInvalid,
 } from "./invalidRows";
-import { verifyRow, verifyCol, verifyColor } from "./queenCounters";
+import { queensInRow, queensInCol, queensInColor } from "./queenCounters";
 
 export function validateNewQueen(board, col, row) {
   validateCorners(board, col, row);
@@ -14,7 +15,7 @@ export function validateNewQueen(board, col, row) {
 }
 
 export function isSameRow(board, col, row) {
-  let queens = verifyRow(board, row, col);
+  let queens = queensInRow(board, row, col);
 
   if (queens >= 2) makeRowInvalid(board, row);
 
@@ -26,7 +27,7 @@ export function isSameRow(board, col, row) {
 }
 
 export function isSameCol(board, col, row) {
-  let queens = verifyCol(board, row, col);
+  let queens = queensInCol(board, row, col);
 
   if (queens >= 2) {
     makeColInvalid(board, col);
@@ -41,7 +42,7 @@ export function isSameCol(board, col, row) {
 
 export function isSameColor(board, col, row) {
   const color = board[row][col].color;
-  const queens = verifyColor(board, col, row, color);
+  const queens = queensInColor(board, col, row, color);
 
   if (queens >= 2) makeColorInvalid(board, color);
 
@@ -102,4 +103,30 @@ export const isDL = (board, row, col, len) => {
 export const isDR = (board, row, col, len) => {
   if (row === len || col === len) return false;
   return board[row + 1][col + 1].state === "queen";
+};
+
+export const validateInvalidRows = (board) => {
+  board.forEach((_, i) => {
+    if (queensInRow(board, i, 0) >= 2) {
+      makeRowInvalid(board, i);
+    }
+  });
+};
+
+export const validateInvalidCols = (board) => {
+  const len = board.length - 1;
+
+  for (let i = 0; i < len; i++) {
+    if (queensInCol(board, 0, i) >= 2) {
+      makeColInvalid(board, i);
+    }
+  }
+};
+
+export const validateInvalidColors = (board) => {
+  colors.forEach((color) => {
+    if (queensInColor(board, 0, 0, color) >= 2) {
+      makeColorInvalid(board, color);
+    }
+  });
 };

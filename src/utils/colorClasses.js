@@ -1,3 +1,15 @@
+export const colors = [
+  "purple",
+  "orange",
+  "blue",
+  "green",
+  "grey",
+  "pink",
+  "aqua",
+  "red",
+  "yellow",
+];
+
 export const colorsDic = {
   purple: "bg-purple-400",
   orange: "bg-orange-400",

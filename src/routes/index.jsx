@@ -9,7 +9,7 @@ const router = createBrowserRouter([
     element: <Levels />,
   },
   {
-    path: "/board",
+    path: "/board/:boardNumber",
     element: <Game />,
   },
   {

@@ -1,9 +1,9 @@
-import Game from "./modules/game-board/pages/Game"
-function App() {
+import { RouterProvider } from "react-router-dom";
 
-  return (
-    <Game />
-  )
+import router from "./routes";
+
+function App() {
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;

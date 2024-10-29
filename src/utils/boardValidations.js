@@ -14,6 +14,22 @@ export function validateNewQueen(board, col, row) {
   isSameColor(board, col, row);
 }
 
+export function validateBoard (board){
+  if (board.length === 0) return false;
+
+  let totalQueens = 0;
+  let isValid = true;
+
+  board.forEach((row) => {
+    row.forEach((cell) => {
+      if (cell.isWrong) isValid = false;
+      if (cell.state === "queen") totalQueens += 1;
+    });
+  });
+
+  return totalQueens === board.length && isValid;
+}
+
 export function isSameRow(board, col, row) {
   let queens = queensInRow(board, row, col);
 

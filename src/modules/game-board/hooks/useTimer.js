@@ -1,25 +1,27 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const useTimer = () => {
   const [count, setCount] = useState(0);
-  const [gameInterval, setGameInterval] = null;
+  const [gameInterval, setGameInterval] = useState(true);
+  const interval = useRef(null);
 
   useEffect(() => {
+    if (!gameInterval) return;
+    if (interval.current) clearInterval(interval.current);
 
-    setGameInterval(setInterval(() => {
+    interval.current = setInterval(() => {
       setCount((prev) => prev + 1);
-    }, 1000));
+    }, 1000);
 
-    return () => clearInterval(gameInterval);
-  }, [count]);
+    return () => clearInterval(interval.current);
+  }, [count, gameInterval]);
 
-  const stopTimer = () => {
-    clearInterval(gameInterval);
+  const stopInterval = () => {
+    clearInterval(interval);
+    setGameInterval(false);
+  };
 
-    setGameInterval(null);
-  }
-
-  return { timer: sec2min(count), stopTimer };
+  return { timer: sec2min(count), stopInterval };
 };
 
 export default useTimer;

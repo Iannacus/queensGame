@@ -1,44 +1,50 @@
-import { useState } from 'react'
-import { transformBoard, boardCopy, markCellWithX, markCellWithQueen, unmarkCell } from '../../../utils/boardOperations';
-import { validateBoard } from '../../../utils/boardValidations';
+import { useEffect, useState } from "react";
+import {
+  transformBoard,
+  boardCopy,
+  markCellWithX,
+  markCellWithQueen,
+  unmarkCell,
+} from "../../../utils/boardOperations";
+import { validateBoard } from "../../../utils/boardValidations";
 
 export default function useBoard() {
-  const [board, setBoard] = useState([])
+  const [board, setBoard] = useState([]);
 
   const changeBoard = (board) => {
-    setBoard(transformBoard(board))
-  }
+    setBoard(transformBoard(board));
+  };
 
   const handleBoard = (newBoard) => {
     setBoard(newBoard);
-  }
+  };
 
   const markCell = (data) => {
     const copy = boardCopy(board);
     const currentCell = board[data.row][data.col];
 
-    if(currentCell.state === "empty") {
+    if (currentCell.state === "empty") {
       markCellWithX(handleBoard, copy, data.col, data.row);
       return;
     }
 
-    if(currentCell.state === "x") {
+    if (currentCell.state === "x") {
       markCellWithQueen(handleBoard, copy, data.col, data.row);
       return;
     }
-    
+
     unmarkCell(handleBoard, copy, data.col, data.row);
-  }
+  };
 
   const isGameComplete = () => {
-    return validateBoard(board);
-  }
+    const isValid = validateBoard(board);
+    return isValid;
+  };
 
   return {
     board,
     changeBoard,
     markCell,
     isGameComplete,
-  }
-
+  };
 }

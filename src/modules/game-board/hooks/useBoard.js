@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { transformBoard, boardCopy, markCellWithX, markCellWithQueen, unmarkCell } from '../../../utils/boardOperations'
+import { transformBoard, boardCopy, markCellWithX, markCellWithQueen, unmarkCell } from '../../../utils/boardOperations';
+import { validateBoard } from '../../../utils/boardValidations';
 
 export default function useBoard() {
   const [board, setBoard] = useState([])
@@ -29,10 +30,15 @@ export default function useBoard() {
     unmarkCell(handleBoard, copy, data.col, data.row);
   }
 
+  const isGameComplete = () => {
+    return validateBoard(board);
+  }
+
   return {
     board,
     changeBoard,
-    markCell
+    markCell,
+    isGameComplete,
   }
 
 }

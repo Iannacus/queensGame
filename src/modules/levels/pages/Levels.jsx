@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import Level from "../components/Level";
@@ -13,6 +12,7 @@ export default function Levels() {
       {boards.map((_, i) => {
         return (
           <Level
+            key={i}
             level={i + 1}
             onClick={() => {
               navigate(`/board/${i + 1}`);

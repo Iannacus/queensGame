@@ -6,6 +6,7 @@ import Diagonals from "../assets/Diagonals";
 
 export default function Cell({
   color,
+  size,
   isWrong,
   state,
   isBlocked,
@@ -24,7 +25,7 @@ export default function Cell({
   };
   return (
     <div
-      className={`relative w-[11.11%] aspect-square ${getBorder(
+      className={`relative ${size || "w-[11.11%]"} aspect-square ${getBorder(
         border
       )} border-slate-900 flex justify-center items-center ${color} ${
         isWrong ? "text-red-500" : "text-slate-900"
@@ -50,6 +51,7 @@ export default function Cell({
 
 Cell.propTypes = {
   color: PropTypes.string,
+  size: PropTypes.string,
   isWrong: PropTypes.bool,
   state: PropTypes.oneOf(["empty", "x", "queen"]),
   isBlocked: PropTypes.bool,

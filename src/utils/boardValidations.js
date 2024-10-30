@@ -14,20 +14,19 @@ export function validateNewQueen(board, col, row) {
   isSameColor(board, col, row);
 }
 
-export function validateBoard (board){
+export function validateBoard(board) {
   if (board.length === 0) return false;
 
-  let totalQueens = 0;
   let isValid = true;
-
-  board.forEach((row) => {
-    row.forEach((cell) => {
-      if (cell.isWrong) isValid = false;
-      if (cell.state === "queen") totalQueens += 1;
-    });
-  });
+  const totalQueens = countQueens(board);
 
   return totalQueens === board.length && isValid;
+}
+
+export function countQueens(board) {
+  return board.reduce((acc, row) => {
+    return acc + row.filter((cell) => cell.state === "queen").length;
+  }, 0);
 }
 
 export function isSameRow(board, col, row) {

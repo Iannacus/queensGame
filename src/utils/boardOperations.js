@@ -1,6 +1,5 @@
 import {cleanCells} from './boardCleaners';
-import {validateNewQueen} from './boardValidations';
-
+import { validateNewQueen, countQueens } from "./boardValidations";
 
 export const transformBoard = (board) => {
   return board.map((row, i) => transformRow(row, i));
@@ -15,6 +14,7 @@ const transformRow = (row, i) => {
     isWrong: false,
     invalid: false,
     blocked: cell.blocked,
+    method: "",
   }));
 };
 
@@ -29,6 +29,7 @@ export const markCellWithX = (updateBoard, board, col, row) => {
 
 export const markCellWithQueen = (updateBoard, board, col, row) => {
   board[row][col].state = "queen";
+  board[row][col].stack = countQueens(board);
   validateNewQueen(board, col, row);
   updateBoard(board);
 };

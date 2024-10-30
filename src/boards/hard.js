@@ -2,7 +2,7 @@ export const boards = [
   [
     [
       { color: "aqua", blocked: false },
-      { color: "aqua", blocked: true },
+      { color: "aqua", blocked: false },
       { color: "aqua", blocked: false },
       { color: "aqua", blocked: false },
       { color: "grey", blocked: false },
@@ -18,7 +18,7 @@ export const boards = [
       { color: "grey", blocked: false },
       { color: "grey", blocked: false },
       { color: "grey", blocked: false },
-      { color: "green", blocked: true },
+      { color: "green", blocked: false },
       { color: "green", blocked: false },
       { color: "blue", blocked: false },
     ],
@@ -103,7 +103,7 @@ export const boards = [
   [
     [
       { color: "pink", blocked: false },
-      { color: "pink", blocked: true },
+      { color: "pink", blocked: false },
       { color: "pink", blocked: false },
       { color: "aqua", blocked: false },
       { color: "aqua", blocked: false },
@@ -115,7 +115,7 @@ export const boards = [
       { color: "pink", blocked: false },
       { color: "purple", blocked: false },
       { color: "purple", blocked: false },
-      { color: "purple", blocked: true },
+      { color: "purple", blocked: false },
       { color: "aqua", blocked: false },
       { color: "aqua", blocked: false },
       { color: "aqua", blocked: false },
@@ -791,6 +791,694 @@ export const boards = [
       },
       {
         color: "orange",
+        blocked: false,
+      },
+    ],
+  ],
+  [
+    [
+      {
+        color: "red",
+        blocked: false,
+      },
+      {
+        color: "red",
+        blocked: false,
+      },
+      {
+        color: "red",
+        blocked: false,
+      },
+      {
+        color: "orange",
+        blocked: false,
+      },
+      {
+        color: "orange",
+        blocked: false,
+      },
+      {
+        color: "orange",
+        blocked: false,
+      },
+      {
+        color: "blue",
+        blocked: false,
+      },
+      {
+        color: "blue",
+        blocked: false,
+      },
+      {
+        color: "green",
+        blocked: false,
+      },
+    ],
+    [
+      {
+        color: "red",
+        blocked: false,
+      },
+      {
+        color: "grey",
+        blocked: false,
+      },
+      {
+        color: "grey",
+        blocked: false,
+      },
+      {
+        color: "grey",
+        blocked: false,
+      },
+      {
+        color: "grey",
+        blocked: false,
+      },
+      {
+        color: "orange",
+        blocked: false,
+      },
+      {
+        color: "orange",
+        blocked: false,
+      },
+      {
+        color: "blue",
+        blocked: false,
+      },
+      {
+        color: "green",
+        blocked: false,
+      },
+    ],
+    [
+      {
+        color: "red",
+        blocked: false,
+      },
+      {
+        color: "grey",
+        blocked: false,
+      },
+      {
+        color: "purple",
+        blocked: false,
+      },
+      {
+        color: "grey",
+        blocked: false,
+      },
+      {
+        color: "lime",
+        blocked: false,
+      },
+      {
+        color: "lime",
+        blocked: false,
+      },
+      {
+        color: "lime",
+        blocked: false,
+      },
+      {
+        color: "blue",
+        blocked: false,
+      },
+      {
+        color: "green",
+        blocked: false,
+      },
+    ],
+    [
+      {
+        color: "red",
+        blocked: false,
+      },
+      {
+        color: "grey",
+        blocked: false,
+      },
+      {
+        color: "purple",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "lime",
+        blocked: false,
+      },
+      {
+        color: "green",
+        blocked: false,
+      },
+      {
+        color: "green",
+        blocked: false,
+      },
+      {
+        color: "green",
+        blocked: false,
+      },
+      {
+        color: "green",
+        blocked: false,
+      },
+    ],
+    [
+      {
+        color: "grey",
+        blocked: false,
+      },
+      {
+        color: "grey",
+        blocked: false,
+      },
+      {
+        color: "purple",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "lime",
+        blocked: false,
+      },
+      {
+        color: "lime",
+        blocked: false,
+      },
+      {
+        color: "lime",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+    ],
+    [
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "purple",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "lime",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+    ],
+    [
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "purple",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "lime",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+    ],
+    [
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+    ],
+    [
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+    ],
+  ],
+  [
+    [
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "orange",
+        blocked: false,
+      },
+      {
+        color: "orange",
+        blocked: false,
+      },
+      {
+        color: "orange",
+        blocked: false,
+      },
+    ],
+    [
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "blue",
+        blocked: false,
+      },
+      {
+        color: "blue",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "orange",
+        blocked: false,
+      },
+      {
+        color: "orange",
+        blocked: false,
+      },
+    ],
+    [
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "blue",
+        blocked: false,
+      },
+      {
+        color: "blue",
+        blocked: false,
+      },
+      {
+        color: "green",
+        blocked: false,
+      },
+      {
+        color: "green",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+    ],
+    [
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "blue",
+        blocked: false,
+      },
+      {
+        color: "green",
+        blocked: false,
+      },
+      {
+        color: "green",
+        blocked: false,
+      },
+      {
+        color: "green",
+        blocked: false,
+      },
+      {
+        color: "grey",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+    ],
+    [
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "red",
+        blocked: false,
+      },
+      {
+        color: "red",
+        blocked: false,
+      },
+      {
+        color: "red",
+        blocked: false,
+      },
+      {
+        color: "yellow",
+        blocked: false,
+      },
+      {
+        color: "grey",
+        blocked: false,
+      },
+      {
+        color: "grey",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+    ],
+    [
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "red",
+        blocked: false,
+      },
+      {
+        color: "red",
+        blocked: false,
+      },
+      {
+        color: "yellow",
+        blocked: false,
+      },
+      {
+        color: "yellow",
+        blocked: false,
+      },
+      {
+        color: "grey",
+        blocked: false,
+      },
+      {
+        color: "grey",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+    ],
+    [
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "yellow",
+        blocked: false,
+      },
+      {
+        color: "yellow",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+    ],
+    [
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "brown",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "purple",
+        blocked: false,
+      },
+      {
+        color: "purple",
+        blocked: false,
+      },
+    ],
+    [
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "pink",
+        blocked: false,
+      },
+      {
+        color: "purple",
+        blocked: false,
+      },
+      {
+        color: "purple",
+        blocked: false,
+      },
+      {
+        color: "purple",
         blocked: false,
       },
     ],

@@ -1,12 +1,14 @@
 import { useParams } from "react-router-dom";
-
 import GameBoard from "../components/GameBoard";
 import useTimer from "../hooks/useTimer";
+import useReset from "../hooks/useReset";
 
 import { boards } from "../../../boards/hard";
+import Button from "../../../components/Button";
 
 function Game() {
   const { timer, stopInterval } = useTimer();
+  const { resetBoard, onResetBoard, cancelReset } = useReset();
 
   const { boardNumber } = useParams();
 
@@ -16,9 +18,16 @@ function Game() {
         neutir
       </div>
       <h2 className="text-white">{timer}</h2>
-      <button onClick={() => stopInterval()}>stop</button>
       <div className="max-w-[500px] min-w-[350px] px-[10px]">
-        <GameBoard board={boards[boardNumber - 1]} onComplete={stopInterval} />
+        <Button label="Borrar tablero" onClick={onResetBoard} />
+      </div>
+      <div className="max-w-[500px] min-w-[350px] px-[10px]">
+        <GameBoard
+          board={boards[boardNumber - 1]}
+          onComplete={stopInterval}
+          resetBoard={resetBoard}
+          handleReset={cancelReset}
+        />
       </div>
     </div>
   );

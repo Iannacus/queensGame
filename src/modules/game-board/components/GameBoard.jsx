@@ -6,7 +6,12 @@ import useBoard from "../hooks/useBoard";
 
 import { colorsDic } from "../../../utils/colorClasses";
 
-export default function GameBoard({ board, onComplete }) {
+export default function GameBoard({
+  board,
+  onComplete,
+  resetBoard,
+  handleReset,
+}) {
   const {
     board: gameBoard,
     changeBoard,
@@ -16,8 +21,11 @@ export default function GameBoard({ board, onComplete }) {
   } = useBoard();
 
   useEffect(() => {
-    changeBoard(board);
-  }, []);
+    if (resetBoard) {
+      changeBoard(board);
+      handleReset();
+    }
+  }, [resetBoard]);
 
   useEffect(() => {
     if (isGameComplete()) {
@@ -56,4 +64,6 @@ export default function GameBoard({ board, onComplete }) {
 GameBoard.propTypes = {
   board: PropTypes.array.isRequired,
   onComplete: PropTypes.func.isRequired,
+  resetBoard: PropTypes.bool,
+  handleReset: PropTypes.func.isRequired,
 };

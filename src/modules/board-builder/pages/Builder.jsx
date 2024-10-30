@@ -1,6 +1,7 @@
 import Cell from "../../../components/Cell";
 import useBuilder from "../hooks/useBuilder";
 import { colors, colorsDic } from "../../../utils/colorClasses";
+import Button from "../../../components/Button";
 
 export default function Builder() {
   const { board, updateBoard, color, changeColor, changeSize, addBoard } =
@@ -79,13 +80,7 @@ export default function Builder() {
         ))}
       </div>
       <div>
-        <button
-          type="submit"
-          className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          onClick={() => addBoard(board)}
-        >
-          Agregar tablero
-        </button>
+        <Button label="Agregar tablero" onClick={() => addBoard(board)} />
       </div>
     </div>
   );

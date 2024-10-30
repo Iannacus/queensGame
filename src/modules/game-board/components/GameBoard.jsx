@@ -12,6 +12,7 @@ export default function GameBoard({ board, onComplete }) {
     changeBoard,
     markCell,
     isGameComplete,
+    getBorders,
   } = useBoard();
 
   useEffect(() => {
@@ -36,6 +37,7 @@ export default function GameBoard({ board, onComplete }) {
               state={cell.state}
               isBlocked={cell.blocked}
               invalid={cell.invalid}
+              border={getBorders(i, j)}
               onClick={() =>
                 markCell({
                   row: cell.row,

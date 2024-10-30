@@ -41,10 +41,33 @@ export default function useBoard() {
     return isValid;
   };
 
+  const getBorders = (row, col) => {
+    const borders = {};
+    const cell = board[row][col];
+
+    const boardLength = board.length - 1;
+
+    if (col < boardLength) {
+      const rightCell = board[row][col + 1];
+      if (cell.color !== rightCell.color) {
+        borders.right = true;
+      }
+    }
+    if (row < boardLength) {
+      const bottomCell = board[row + 1][col];
+      if (cell.color !== bottomCell.color) {
+        borders.bottom = true;
+      }
+    }
+
+    return borders;
+  };
+
   return {
     board,
     changeBoard,
     markCell,
     isGameComplete,
+    getBorders,
   };
 }

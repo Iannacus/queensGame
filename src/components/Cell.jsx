@@ -11,10 +11,22 @@ export default function Cell({
   isBlocked,
   invalid,
   onClick,
+  border = {},
 }) {
+  const getBorder = (border) => {
+    if (Object.keys(border).length > 0) {
+      const { bottom, right } = border;
+      if (!bottom) return "border-b border-r-2";
+      if (!right) return "border-r border-b-2";
+      return "border-b-2 border-r-2";
+    }
+    return "border-b border-r";
+  };
   return (
     <div
-      className={`relative w-[11.11%] aspect-square border-b border-r border-slate-900 flex justify-center items-center ${color} ${
+      className={`relative w-[11.11%] aspect-square ${getBorder(
+        border
+      )} border-slate-900 flex justify-center items-center ${color} ${
         isWrong ? "text-red-500" : "text-slate-900"
       }`}
       onClick={isBlocked ? () => {} : () => onClick()}
@@ -43,4 +55,5 @@ Cell.propTypes = {
   isBlocked: PropTypes.bool,
   invalid: PropTypes.bool,
   onClick: PropTypes.func,
+  border: PropTypes.arrayOf(PropTypes.string),
 };

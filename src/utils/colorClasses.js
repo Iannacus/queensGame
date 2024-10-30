@@ -22,6 +22,6 @@ export const colorsDic = {
   aqua: "bg-cyan-400",
   red: "bg-red-400",
   yellow: "bg-amber-400",
-  brown: "bg-amber-900",
+  brown: "bg-yellow-800",
   lime: "bg-lime-400",
 };

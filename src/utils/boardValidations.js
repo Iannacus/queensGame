@@ -17,10 +17,10 @@ export function validateNewQueen(board, col, row) {
 export function validateBoard(board) {
   if (board.length === 0) return false;
 
-  let isValid = true;
+  const isInvalid = board.some((row) => row.some((cell) => cell.isWrong));
   const totalQueens = countQueens(board);
 
-  return totalQueens === board.length && isValid;
+  return totalQueens === board.length && !isInvalid;
 }
 
 export function countQueens(board) {

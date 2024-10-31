@@ -16,13 +16,25 @@ function Game() {
 
   const navigate = useNavigate();
 
+  const changeBoard = (board) => {
+    setShowNext(false);
+    navigate(`/board/${board}`);
+    resetInterval();
+    onResetBoard();
+    startInterval();
+  };
+
   return (
     <div className="bg-slate-950 h-screen flex flex-col justify-start items-center gap-12">
       <div className="flex justify-center w-full px-4 py-2 bg-slate-900">
         neutir
       </div>
       <h2 className="text-white">{timer}</h2>
-      <div className="max-w-[500px] min-w-[350px] px-[10px]">
+      <div
+        className={`max-w-[500px] min-w-[350px] px-[10px] ${
+          showNext ? "invisible" : "visible"
+        } `}
+      >
         <Button label="Borrar tablero" onClick={onResetBoard} />
       </div>
       <div className="max-w-[500px] min-w-[350px] border-2  border-slate-900 rounded-[20px] overflow-hidden">
@@ -46,11 +58,7 @@ function Game() {
             <Button
               label="Anterior"
               onClick={() => {
-                setShowNext(false);
-                navigate(`/board/${boardNumber - 1}`);
-                resetInterval();
-                onResetBoard();
-                startInterval();
+                changeBoard(boardNumber - 1);
               }}
             />
           </div>
@@ -60,11 +68,7 @@ function Game() {
             <Button
               label="Siguiente"
               onClick={() => {
-                setShowNext(false);
-                navigate(`/board/${Number(boardNumber) + 1}`);
-                resetInterval();
-                onResetBoard();
-                startInterval();
+                changeBoard(Number(boardNumber) + 1);
               }}
             />
           </div>

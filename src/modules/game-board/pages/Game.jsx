@@ -8,7 +8,7 @@ import { boards } from "../../../boards/hard";
 import Button from "../../../components/Button";
 
 function Game() {
-  const { timer, stopInterval, resetInterval } = useTimer();
+  const { timer, startInterval, stopInterval, resetInterval } = useTimer();
   const { resetBoard, onResetBoard, cancelReset } = useReset();
   const [showNext, setShowNext] = useState(false);
 
@@ -49,6 +49,7 @@ function Game() {
                 navigate(`/board/${boardNumber - 1}`);
                 resetInterval();
                 onResetBoard();
+                startInterval();
               }}
             />
           </div>
@@ -61,6 +62,7 @@ function Game() {
                 navigate(`/board/${Number(boardNumber) + 1}`);
                 resetInterval();
                 onResetBoard();
+                startInterval();
               }}
             />
           </div>

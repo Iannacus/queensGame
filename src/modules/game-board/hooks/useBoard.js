@@ -8,7 +8,20 @@ import {
 } from "../../../utils/boardOperations";
 import { validateBoard } from "../../../utils/boardValidations";
 
+
+
 export default function useBoard() {
+  const sizes = {
+    5: "w-[20%]",
+    6: "w-[16.666666666666668%]",
+    7: "w-[14.285714285714286%]",
+    8: "w-[12.5%]",
+    9: "w-[11.11111111111111%]",
+    10: "w-[10%]",
+    11: "w-[9.090909090909092%]",
+    12: "w-[8.333333333333334%]",
+  };
+
   const [board, setBoard] = useState([]);
 
   const changeBoard = (board) => {
@@ -69,5 +82,6 @@ export default function useBoard() {
     markCell,
     isGameComplete,
     getBorders,
+    sizes,
   };
 }

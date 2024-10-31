@@ -18,6 +18,7 @@ export default function GameBoard({
     markCell,
     isGameComplete,
     getBorders,
+    sizes,
   } = useBoard();
 
   useEffect(() => {
@@ -41,6 +42,7 @@ export default function GameBoard({
             <Cell
               key={j}
               color={colorsDic[cell.color]}
+              size={sizes[gameBoard.length]}
               isWrong={cell.isWrong}
               state={cell.state}
               isBlocked={cell.blocked}

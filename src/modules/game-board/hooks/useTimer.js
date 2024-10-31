@@ -21,7 +21,11 @@ const useTimer = () => {
     setGameInterval(false);
   };
 
-  return { timer: sec2min(count), stopInterval };
+  const resetInterval = () => {
+    setCount(0);
+  };
+
+  return { timer: sec2min(count), stopInterval, resetInterval };
 };
 
 export default useTimer;

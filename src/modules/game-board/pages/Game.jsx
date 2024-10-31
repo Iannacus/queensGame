@@ -8,7 +8,7 @@ import { boards } from "../../../boards/hard";
 import Button from "../../../components/Button";
 
 function Game() {
-  const { timer, stopInterval, resetInterval } = useTimer();
+  const { timer, startInterval, stopInterval, resetInterval } = useTimer();
   const { resetBoard, onResetBoard, cancelReset } = useReset();
   const [showNext, setShowNext] = useState(false);
 
@@ -41,14 +41,16 @@ function Game() {
           boardNumber < boards.length ? "justify-end" : "justify-start"
         }`}
       >
-        {boardNumber > 1 && (
+        {boardNumber > 1 && showNext && (
           <div className="w-1/2">
             <Button
               label="Anterior"
               onClick={() => {
+                setShowNext(false);
                 navigate(`/board/${boardNumber - 1}`);
                 resetInterval();
                 onResetBoard();
+                startInterval();
               }}
             />
           </div>
@@ -58,9 +60,11 @@ function Game() {
             <Button
               label="Siguiente"
               onClick={() => {
+                setShowNext(false);
                 navigate(`/board/${Number(boardNumber) + 1}`);
                 resetInterval();
                 onResetBoard();
+                startInterval();
               }}
             />
           </div>

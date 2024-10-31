@@ -51,6 +51,19 @@ export default function useBoard() {
 
   const isGameComplete = () => {
     const isValid = validateBoard(board);
+
+    if (isValid && board[0][0].blocked === false) {
+      const copy = boardCopy(board);
+
+      copy.forEach((row) => {
+        row.forEach((cell) => {
+          cell.blocked = true;
+        });
+      });
+
+      setBoard(copy);
+    }
+
     return isValid;
   };
 

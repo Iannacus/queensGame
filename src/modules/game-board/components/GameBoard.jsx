@@ -30,6 +30,7 @@ export default function GameBoard({
 
   useEffect(() => {
     if (isGameComplete()) {
+      console.log("Game Complete");
       onComplete();
     }
   }, [gameBoard]);

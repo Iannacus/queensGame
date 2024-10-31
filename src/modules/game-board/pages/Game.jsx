@@ -41,11 +41,12 @@ function Game() {
           boardNumber < boards.length ? "justify-end" : "justify-start"
         }`}
       >
-        {boardNumber > 1 && (
+        {boardNumber > 1 && showNext && (
           <div className="w-1/2">
             <Button
               label="Anterior"
               onClick={() => {
+                setShowNext(false);
                 navigate(`/board/${boardNumber - 1}`);
                 resetInterval();
                 onResetBoard();
@@ -59,6 +60,7 @@ function Game() {
             <Button
               label="Siguiente"
               onClick={() => {
+                setShowNext(false);
                 navigate(`/board/${Number(boardNumber) + 1}`);
                 resetInterval();
                 onResetBoard();
